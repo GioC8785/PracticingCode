@@ -2,29 +2,30 @@
 import java.util.Scanner;
 
 public class Main {
-
     public static void main(String[] args) {
-        printText();
         Scanner input = new Scanner(System.in);
-        double numOfTimes = input.nextDouble();
-        myMethod(numOfTimes);
 
-
+        System.out.println("Enter your digits");
+        long n = input.nextLong();
+        int sum = sumDigits(n);
+        System.out.println("The sum is: " + sum);
     }
 
-    public static void printText() {
-        System.out.println("How many times do you want to print?");
-    }
+    public static int sumDigits(long n) {
 
-    public static void myMethod(double numOfTimes) {
-        int i = 0;
-        while (i < numOfTimes) {
-            System.out.println("Greetings!");
-            i++;
+        int num = (int) (n);
+        int sum = 0;
+
+        while (num > 0) {
+
+            sum += num % 10;
+            num = num / 10;
+
         }
-        }
-
+        return sum;
     }
+}
+
 
 
 
